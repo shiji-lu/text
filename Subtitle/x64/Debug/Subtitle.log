@@ -1,0 +1,5 @@
+﻿  源.cpp
+D:\code\C语言\Subtitle\Subtitle\源.cpp(126,32): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\code\C语言\Subtitle\Subtitle\源.cpp(197,13): warning C4477: “scanf_s”: 格式字符串“%s”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“size_t”
+D:\code\C语言\Subtitle\Subtitle\源.cpp(197,13): message : 此参数用作缓冲区大小
+  Subtitle.vcxproj -> D:\code\C语言\Subtitle\x64\Debug\Subtitle.exe
