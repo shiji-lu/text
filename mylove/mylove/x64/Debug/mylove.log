@@ -1,0 +1,6 @@
+﻿  源.cpp
+D:\code\C语言\mylove\mylove\源.cpp(24,15): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\code\C语言\mylove\mylove\源.cpp(50,83): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\code\C语言\mylove\mylove\源.cpp(65,75): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\code\C语言\mylove\mylove\源.cpp(66,83): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+  mylove.vcxproj -> D:\code\C语言\mylove\x64\Debug\mylove.exe
