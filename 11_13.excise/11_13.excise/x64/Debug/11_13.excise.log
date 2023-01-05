@@ -1,3 +1,0 @@
-﻿  text.c
-D:\code\C语言\11_13.excise\11_13.excise\text.c(194,10): warning C4477: “scanf”: 格式字符串“%d”需要类型“int *”的参数，但可变参数 1 拥有了类型“int”
-  11_13.excise.vcxproj -> D:\code\C语言\11_13.excise\x64\Debug\11_13.excise.exe
