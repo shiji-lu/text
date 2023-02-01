@@ -1,0 +1,6 @@
+﻿  text.c
+D:\code\C语言\c项目测试\c项目测试\text.c(250): warning C4716: “TM3”: 必须返回一个值
+D:\code\C语言\c项目测试\c项目测试\text.c(209): warning C4716: “TM2”: 必须返回一个值
+D:\code\C语言\c项目测试\c项目测试\text.c(170): warning C4716: “TM1”: 必须返回一个值
+D:\code\C语言\c项目测试\c项目测试\text.c(290): warning C4716: “TM4”: 必须返回一个值
+  c项目测试.vcxproj -> D:\code\C语言\c项目测试\x64\Debug\c项目测试.exe
