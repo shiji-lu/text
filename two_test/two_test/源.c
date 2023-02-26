@@ -345,38 +345,38 @@
 //
 
 
-struct B
-{
-	char c;
-	short s;
-	double d;
-};
-
-struct Stu
-{
-	//成员变量
-	struct B sb;
-	char name[20];//名字
-	int age;//年龄
-	char id[20];
-} s1,s2;//s1和s2也是结构体变量
-//s1,s2是全局变量
-
-int main()
-{
-	//s是局部变量
-	struct Stu s = { {'w', 20, 3.14}, "张三", 30, "202005034"};//对象
-	//.  ->
-	//printf("%c\n", s.sb.c);
-	//printf("%s\n", s.id);
-
-	/*struct Stu* ps = &s;
-	printf("%c\n", (*ps).sb.c);
-	printf("%c\n", ps->sb.c);*/  //指针可以用->
-	//对象用.
-
-	return 0;
-}
+//struct B
+//{
+//	char c;
+//	short s;
+//	double d;
+//};
+//
+//struct Stu
+//{
+//	//成员变量
+//	struct B sb;
+//	char name[20];//名字
+//	int age;//年龄
+//	char id[20];
+//} s1,s2;//s1和s2也是结构体变量
+////s1,s2是全局变量
+//
+//int main()
+//{
+//	//s是局部变量
+//	struct Stu s = { {'w', 20, 3.14}, "张三", 30, "202005034"};//对象
+//	//.  ->
+//	//printf("%c\n", s.sb.c);
+//	//printf("%s\n", s.id);
+//
+//	/*struct Stu* ps = &s;
+//	printf("%c\n", (*ps).sb.c);
+//	printf("%c\n", ps->sb.c);*/  //指针可以用->
+//	//对象用.
+//
+//	return 0;
+//}
 //
 //
 //struct B
@@ -427,18 +427,180 @@ int main()
 
 
 
-int Add(int x, int y)
-{
-	int z = 0;
-	z = x + y;
-	return z;
-}
-int main()
-{
-	int a = 3;
-	int b = 5;
-	int c = 0;
-	c = Add(a, b);
+//int Add(int x, int y)
+//{
+//	int z = 0;
+//	z = x + y;
+//	return z;
+//}
+//int main()
+//{
+//	int a = 3;
+//	int b = 5;
+//	int c = 0;
+//	c = Add(a, b);
+//
+//	return 0;
+//}
 
-	return 0;
+//#include  <stdio.h>
+//#define    N    5
+//typedef struct  student {
+//    long  sno;
+//    char  name[10];
+//    float  score[3];
+//} STU;
+//void fun(char* filename, STU  n)
+//{
+//    FILE* fp;
+//    /**********found**********/
+//    fp = fopen(filename, "rb+");
+//    /**********found**********/
+//    fseek(fp, -(long)sizeof(STU), SEEK_END);
+//    /**********found**********/
+//    fwrite(&n, sizeof(STU), 1, fp);
+//    fclose(fp);
+//}
+//void main()
+//{
+//    STU  t[N] = { {10001,"MaChao", 91, 92, 77}, {10002,"CaoKai", 75, 60, 88},
+//              {10003,"LiSi", 85, 70, 78},    {10004,"FangFang", 90, 82, 87},
+//              {10005,"ZhangSan", 95, 80, 88} };
+//    STU  n = { 10006,"ZhaoSi", 55, 70, 68 }, ss[N];
+//    int  i, j;      FILE* fp;
+//    fp = fopen("student.dat", "wb");
+//    fwrite(t, sizeof(STU), N, fp);
+//    fclose(fp);
+//    fp = fopen("student.dat", "rb");
+//    fread(ss, sizeof(STU), N, fp);
+//    fclose(fp);
+//    printf("\nThe original data :\n\n");
+//    for (j = 0; j < N; j++)
+//    {
+//        printf("\nNo: %ld  Name: %-8s      Scores:  ", ss[j].sno, ss[j].name);
+//        for (i = 0; i < 3; i++)  printf("%6.2f ", ss[j].score[i]);
+//        printf("\n");
+//    }
+//    fun("student.dat", n);
+//    printf("\nThe data after modifing :\n\n");
+//    fp = fopen("student.dat", "rb");
+//    fread(ss, sizeof(STU), N, fp);
+//    fclose(fp);
+//    for (j = 0; j < N; j++)
+//    {
+//        printf("\nNo: %ld  Name: %-8s      Scores:  ", ss[j].sno, ss[j].name);
+//        for (i = 0; i < 3; i++)  printf("%6.2f ", ss[j].score[i]);
+//        printf("\n");
+//    }
+//}
+
+
+
+//#include<string.h>
+//#include<stdio.h>
+//#define N 80
+//int fun(char* s)
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 0; s[i] != '\0'; i++)
+//	{
+//		if (s[i] != ' ' && (s[i + 1] == ' ' || s[i + 1] == '\0'))
+//		{
+//			count++;
+//		}
+//	}
+//	return count;
+//}
+//void main()
+//{
+//	FILE* wf;
+//	char line[N];
+//	int num = 0;
+//	printf("Enter a string:\n ");
+//	gets(line);
+//	num = fun(line);
+//	printf("The number of word is:%d\n\n ", num);
+//	/******************************/
+//	wf = fopen("out.dat", "w");
+//	fprintf(wf, "%d", fun("a big car"));
+//	fclose(wf);
+//	/*****************************/
+//}
+
+
+
+
+//#include <stdlib.h>
+//#include <stdio.h>
+//#define   N   10
+//double fun(double  x[], double* y)
+//{
+//	int  i, j;    double  av;
+//	/**********found**********/
+//	av = 0.0;
+//	/**********found**********/
+//	for (i = 0; i < N; i++)
+//		av = av + x[i] / N;
+//	for (i = j = 0; i < N; i++)
+//		/**********found**********/
+//		if (x[i] > av)  y[j++] = x[i];
+//	y[j] = -1;
+//	return  av;
+//}
+//void main()
+//{
+//	int  i;    double  x[N], y[N];
+//	for (i = 0; i < N; i++) { x[i] = rand() % 50; printf("%4.0f ", x[i]); }
+//	printf("\n");
+//	printf("\nThe average is: %f\n", fun(x, y));
+//	for (i = 0; y[i] >= 0; i++)  printf("%5.1f ", y[i]);
+//	printf("\n");
+//}
+//
+
+
+
+
+//真题卷二  结构体应用
+#include<stdio.h>
+#include<string.h>
+#include<conio.h>
+#include<stdlib.h>
+#define N 10
+typedef struct ss
+{
+	char num[10];
+	int s;
+} STU;
+void fun(STU a[], STU* s)
+{
+	int i = 0;
+	*s = a[0];
+	for (i = 0; i < N; i++)
+	{
+		if (a[i].s < s->s)
+		{
+			*s = a[i];
+		}
+	}
+}
+void main()
+{
+	FILE* wf;
+	STU a[N] = { { "A01",81},{ "A02",89},{ "A03",66},{ "A04",87},{ "A05",77},
+	{ "A06",90},{ "A07",79},{ "A08",61},{ "A09",80},{ "A10",71} }, m;
+	int i;
+	system("CLS");
+	printf("*****The original data*****\n");
+	for (i = 0; i < N; i++)
+		printf("No=%s Mark=%d\n", a[i].num, a[i].s);
+	fun(a, &m);
+	printf("*****THE RESULT*****\n");
+	printf("The lowest :%s, %d\n", m.num, m.s);
+	/******************************/
+	wf = fopen("out.dat", "w");
+	fprintf(wf, "%s, %d", m.num, m.s);
+	fclose(wf);
+	/*****************************/
 }
