@@ -562,45 +562,297 @@
 
 
 
-//真题卷二  结构体应用
-#include<stdio.h>
-#include<string.h>
-#include<conio.h>
-#include<stdlib.h>
-#define N 10
-typedef struct ss
+////真题卷二  结构体应用
+//#include<stdio.h>
+//#include<string.h>
+//#include<conio.h>
+//#include<stdlib.h>
+//#define N 10
+//typedef struct ss
+//{
+//	char num[10];
+//	int s;
+//} STU;
+//void fun(STU a[], STU* s)
+//{
+//	int i = 0;
+//	*s = a[0];
+//	for (i = 0; i < N; i++)
+//	{
+//		if (a[i].s < s->s)
+//		{
+//			*s = a[i];
+//		}
+//	}
+//}
+//void main()
+//{
+//	FILE* wf;
+//	STU a[N] = { { "A01",81},{ "A02",89},{ "A03",66},{ "A04",87},{ "A05",77},
+//	{ "A06",90},{ "A07",79},{ "A08",61},{ "A09",80},{ "A10",71} }, m;
+//	int i;
+//	system("CLS");
+//	printf("*****The original data*****\n");
+//	for (i = 0; i < N; i++)
+//		printf("No=%s Mark=%d\n", a[i].num, a[i].s);
+//	fun(a, &m);
+//	printf("*****THE RESULT*****\n");
+//	printf("The lowest :%s, %d\n", m.num, m.s);
+//	/******************************/
+//	wf = fopen("out.dat", "w");
+//	fprintf(wf, "%s, %d", m.num, m.s);
+//	fclose(wf);
+//	/*****************************/
+//}
+
+
+
+
+
+
+
+//
+//#include<stdio.h>
+//#include<conio.h>
+//#include<stdlib.h>
+//#define  N  5
+//double fun(int w[][N])
+//{
+//	int i, j, count = 0;
+//	double sum = 0.0;
+//	for (i = 0; i < N; i++)
+//	{
+//		for (j = 0; j < N; j++)
+//		{
+//			if (i == 0 || j == 0 || i == N - 1 || j == N - 1)//周边元素的和
+//			{
+//				sum += w[i][j];
+//				count++;
+//			}
+//
+//		}
+//	}
+//	return sum / count;
+//}
+//void main()
+//{
+//	FILE* wf;
+//	int a[N][N] = { 0,1,2,7,9,1,9,7,4,5,2,3,8,3,1,4,5,6,8,2,5,9,1,4,1 };
+//	int i, j;
+//	double s;
+//	system("CLS");
+//	printf("*****The array*****\n ");
+//	for (i = 0; i < N; i++)
+//	{
+//		for (j = 0; j < N; j++)
+//		{
+//			printf("%4d ", a[i][j]);
+//		}
+//		printf("\n ");
+//	}
+//	s = fun(a);
+//	printf("*****THE RESULT*****\n ");
+//	printf("The sum is : %lf\n ", s);
+//	/******************************/
+//	wf = fopen("out.dat", "w");
+//	fprintf(wf, "%lf", s);
+//	fclose(wf);
+//	/*****************************/
+//}
+
+
+
+//
+//#include  <stdlib.h>
+//#include  <stdio.h>
+//#define   N   10
+//double fun(double* x)
+//{
+//    int  i, j;    double  s, av, y[N];
+//    s = 0;
+//    for (i = 0; i < N; i++)  s = s + x[i];
+//    /**********found**********/
+//    av = s / N;
+//    for (i = j = 0; i < N; i++)
+//        if (x[i] > av) {
+//            /**********found**********/
+//            y[j++] = x[i];
+//            x[i] = -1;
+//        }
+//    for (i = 0; i < N; i++)
+//        /**********found**********/
+//        if (x[i] != -1) y[j++] = x[i];
+//    for (i = 0; i < N; i++)x[i] = y[i];
+//    return  av;
+//}
+//void main()
+//{
+//    int  i;     double  x[N];
+//    for (i = 0; i < N; i++) { x[i] = rand() % 50; printf("%4.0f ", x[i]); }
+//    printf("\n");
+//    printf("\nThe average is: %f\n", fun(x));
+//    printf("\nThe result :\n", fun(x));
+//    for (i = 0; i < N; i++)  printf("%5.0f ", x[i]);
+//    printf("\n");
+//}
+//
+
+
+
+
+
+
+//
+//
+//#include  <stdlib.h>
+//#include  <conio.h>
+//#include  <stdio.h>
+///*************found**************/
+//void fun(char* s, int num[5])//????????
+//{
+//    int k, i = 5;
+//    for (k = 0; k < i; k++)
+//        /*************found**************/
+//        num[k] = 0;
+//    for (; *s; s++)
+//    {
+//        i = -1;
+//        /*************found**************/
+//        switch (*s)
+//        {
+//        case 'a': case'A': {i = 0; break; }
+//        case 'e': case 'E': {i = 1; break; }
+//        case 'i': case 'I': {i = 2; break; }
+//        case 'o': case 'O': {i = 3; break; }
+//        case 'u': case 'U': {i = 4; break; }
+//        }
+//        if (i >= 0)
+//            num[i]++;
+//    }
+//}
+//void main()
+//{
+//    char s1[81]; int num1[5], i;
+//    system("CLS");
+//    printf("\nPlease enter a string: ");
+//    gets(s1);
+//    fun(s1, num1);
+//    for (i = 0; i < 5; i++) printf("%d ", num1[i]);
+//    printf("\n");
+//}
+
+
+
+//
+//#include <stdio.h>
+//double fun(double  h)
+//{
+//    long t = (int)(h * 1000 + 5) / 10;//加5法
+//    return (double)t / 100;
+//}
+//
+//main()
+//{
+//    double  a; void NONO();
+//    printf("Enter  a:  "); scanf("%lf", &a);
+//    printf("The original data is :   ");
+//    printf("%f \n\n", a);
+//    printf("The result :  %f\n", fun(a));
+//    NONO();
+//}
+//
+//void NONO()
+//{/* 请在此函数内打开文件，输入测试数据，调用 fun 函数，
+//    输出数据，关闭文件。 */
+//    int i;
+//    double a;
+//    FILE* rf, * wf;
+//
+//    rf = fopen("in.dat", "r");
+//    wf = fopen("out.dat", "w");
+//    for (i = 0; i < 20; i++) {
+//        fscanf(rf, "%lf", &a);
+//        fprintf(wf, "%f\n", fun(a));
+//    }
+//    fclose(rf);
+//    fclose(wf);
+//}
+
+
+//
+//#include <stdio.h>
+//void fun()
+//{
+//    int a[3][3], sum;
+//    int i, j;
+//    /*************found**************/
+//    sum = 0;
+//    for (i = 0; i < 3; i++)
+//    {
+//        for (j = 0; j < 3; j++)
+//            /*************found**************/
+//            scanf("%d", &a[i][j]);
+//    }
+//    for (i = 0; i < 3; i++)
+//        sum = sum + a[i][i];
+//    printf("Sum=%d\n", sum);
+//}
+//void main()
+//{
+//    fun();
+//}
+
+
+//
+//#include  <stdio.h>
+//#define  N  4
+//void fun(int(*a)[N], int* b)
+//{
+//    int  i, j;
+//    for (i = 0; i < N; i++) {
+//        /**********found**********/
+//        b[i] = a[0][i];
+//        for (j = 1; j < N; j++)
+//            /**********found**********/
+//            if (b[i] < a[j][i])
+//                b[i] = a[j][i];
+//    }
+//}
+//void main()
+//{
+//    int  x[N][N] = { {12,5,8,7},{6,1,9,3},{1,2,3,4},{2,8,4,3} }, y[N], i, j;
+//    printf("\nThe matrix :\n");
+//    for (i = 0; i < N; i++)
+//    {
+//        for (j = 0; j < N; j++) printf("%4d", x[i][j]);
+//        printf("\n");
+//    }
+//    /**********found**********/
+//    fun(x, y);
+//    printf("\nThe result is:");
+//    for (i = 0; i < N; i++)  printf("%3d", y[i]);
+//    printf("\n");
+//}
+//
+
+
+
+
+#include <stdio.h>
+/*************found**************/
+void fun(int* x, int* y)
 {
-	char num[10];
-	int s;
-} STU;
-void fun(STU a[], STU* s)
-{
-	int i = 0;
-	*s = a[0];
-	for (i = 0; i < N; i++)
-	{
-		if (a[i].s < s->s)
-		{
-			*s = a[i];
-		}
-	}
+	int t;
+	/*************found**************/
+	t = *x; *x = *y; *y = t;
 }
 void main()
 {
-	FILE* wf;
-	STU a[N] = { { "A01",81},{ "A02",89},{ "A03",66},{ "A04",87},{ "A05",77},
-	{ "A06",90},{ "A07",79},{ "A08",61},{ "A09",80},{ "A10",71} }, m;
-	int i;
-	system("CLS");
-	printf("*****The original data*****\n");
-	for (i = 0; i < N; i++)
-		printf("No=%s Mark=%d\n", a[i].num, a[i].s);
-	fun(a, &m);
-	printf("*****THE RESULT*****\n");
-	printf("The lowest :%s, %d\n", m.num, m.s);
-	/******************************/
-	wf = fopen("out.dat", "w");
-	fprintf(wf, "%s, %d", m.num, m.s);
-	fclose(wf);
-	/*****************************/
+	int a, b;
+	a = 8;
+	b = 3;
+	fun(&a, &b);
+	printf("%d  %d\n ", a, b);
 }
+
+
