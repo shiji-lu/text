@@ -836,23 +836,178 @@
 //
 
 
+//
+//
+//#include <stdio.h>
+///*************found**************/
+//void fun(int* x, int* y)
+//{
+//	int t;
+//	/*************found**************/
+//	t = *x; *x = *y; *y = t;
+//}
+//void main()
+//{
+//	int a, b;
+//	a = 8;
+//	b = 3;
+//	fun(&a, &b);
+//	printf("%d  %d\n ", a, b);
+//}
+
+//#include<conio.h>
+//#include<stdio.h>
+//#include<string.h>
+//#include<stdlib.h>
+//
+//char* fun(char(*a)[81], int num, char* max)
+//{
+//    int i = 0;
+//    max = a[0];
+//    for (i = 0; i < num; i++)
+//    {
+//        if (strlen(max) < strlen(a[i]))
+//        {
+//            max = a[i];
+//        }
+//    }
+//    return max;
+//}
+//void main()
+//{
+//    FILE* wf;
+//    char ss[10][81], * ps = NULL;
+//    char s[3][81] = { "abcd","deg","diegns" }, * p = NULL;
+//    int  i = 0, n;
+//    system("CLS");
+//    printf("输入若干个字符串：");
+//    gets(ss[i]);
+//    puts(ss[i]);
+//    while (!strcmp(ss[i], "****") == 0)  /*用4个星号作为结束输入的标志*/
+//    {
+//        i++;
+//        gets(ss[i]);
+//        puts(ss[i]);
+//    }
+//    n = i;
+//    ps = fun(ss, n, ps);
+//    printf("\nmax=%s\n", ps);
+//    /******************************/
+//    wf = fopen("out.dat", "w");
+//    p = fun(s, 3, p);
+//    fprintf(wf, "%s", p);
+//    fclose(wf);
+//    /*****************************/
+//}
+//
+
+
+
+//#include  <stdlib.h>
+//#include  <conio.h>
+//#include  <stdio.h>
+//double fun(int m)
+//{
+//	double t = 1.0;
+//	int i;
+//	for (i = 2; i <= m; i++)
+//		/*************found**************/
+//		t -= 1.0 / i;
+//	/*************found**************/
+//	return t;
+//}
+//void main()
+//{
+//	int m;
+//	system("CLS");
+//	printf("\nPlease enter 1 integer numbers:\n");
+//	scanf("%d", &m);
+//	printf("\n\nThe result is %1f\n",
+//		fun(m));
+//}
+
+
+//
+//#include <stdio.h>
+//#include <ctype.h>
+//#include <conio.h>
+//#include <stdlib.h>
+//void fun(char* str)
+//{
+//	int i = 0;
+//	char* p;
+//	for (p = str; *p != '\0'; p++)
+//	{
+//		if (*p != ' ')
+//		{
+//			str[i++] = *p;
+//		}
+//	}
+//
+//}
+//void main()
+//{
+//	char str[81];
+//	char Msg[] = "Input a string:";
+//	int n;
+//	FILE* out;
+//	printf(Msg);
+//	gets(str);
+//	puts(str);
+//	fun(str);
+//	printf("*** str: %s\n", str);
+//	/******************************/
+//	out = fopen("out.dat", "w");
+//	fun(Msg);
+//	fprintf(out, "%s", Msg);
+//	fclose(out);
+//	/******************************/
+//}
 
 
 #include <stdio.h>
-/*************found**************/
-void fun(int* x, int* y)
+#define N 80
+int fun(char* str)
 {
-	int t;
-	/*************found**************/
-	t = *x; *x = *y; *y = t;
+	int i, j = 0;
+	int ret = 1;
+	while (str[j])
+	{
+		j++;
+	}
+	j--;
+	for (i = 0; i < j; i++, j--)
+	{
+		if (str[i] != str[j])
+		{
+			ret = 0;
+			break;
+		}
+	}
+	return ret;
 }
+
 void main()
 {
-	int a, b;
-	a = 8;
-	b = 3;
-	fun(&a, &b);
-	printf("%d  %d\n ", a, b);
+	char s[N];
+	FILE* out;
+	char* test[] = { "1234321","123421","123321","abcdCBA" };
+	int i;
+	printf("Enter a string : ");
+	gets(s);
+	printf("\n\n");
+	puts(s);
+	if (fun(s))
+		printf("YES\n");
+	else
+		printf("NO\n");
+	/************************************/
+	out = fopen("out.dat", "w");
+	for (i = 0; i < 4; i++)
+		if (fun(test[i]))
+			fprintf(out, "YES\n");
+		else
+			fprintf(out, "NO\n");
+	fclose(out);
+	/************************************/
 }
-
-
