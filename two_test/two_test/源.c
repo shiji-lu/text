@@ -964,50 +964,69 @@
 //	/******************************/
 //}
 
+//
+//#include <stdio.h>
+//#define N 80
+//int fun(char* str)
+//{
+//	int i, j = 0;
+//	int ret = 1;
+//	while (str[j])
+//	{
+//		j++;
+//	}
+//	j--;
+//	for (i = 0; i < j; i++, j--)
+//	{
+//		if (str[i] != str[j])
+//		{
+//			ret = 0;
+//			break;
+//		}
+//	}
+//	return ret;
+//}
+//
+//void main()
+//{
+//	char s[N];
+//	FILE* out;
+//	char* test[] = { "1234321","123421","123321","abcdCBA" };
+//	int i;
+//	printf("Enter a string : ");
+//	gets(s);
+//	printf("\n\n");
+//	puts(s);
+//	if (fun(s))
+//		printf("YES\n");
+//	else
+//		printf("NO\n");
+//	/************************************/
+//	out = fopen("out.dat", "w");
+//	for (i = 0; i < 4; i++)
+//		if (fun(test[i]))
+//			fprintf(out, "YES\n");
+//		else
+//			fprintf(out, "NO\n");
+//	fclose(out);
+//	/************************************/
+//}
 
-#include <stdio.h>
-#define N 80
-int fun(char* str)
+
+
+#include<stdio.h>
+int main()
 {
-	int i, j = 0;
-	int ret = 1;
-	while (str[j])
+	int i, j, m = 1;
+	for (i = 1; i < 3; i++)
 	{
-		j++;
-	}
-	j--;
-	for (i = 0; i < j; i++, j--)
-	{
-		if (str[i] != str[j])
+		for (j = 3; j > 0; j--)
 		{
-			ret = 0;
-			break;
+			if (i * j > 3)
+				break;
+			m *= i * j;
 		}
 	}
-	return ret;
-}
-
-void main()
-{
-	char s[N];
-	FILE* out;
-	char* test[] = { "1234321","123421","123321","abcdCBA" };
-	int i;
-	printf("Enter a string : ");
-	gets(s);
-	printf("\n\n");
-	puts(s);
-	if (fun(s))
-		printf("YES\n");
-	else
-		printf("NO\n");
-	/************************************/
-	out = fopen("out.dat", "w");
-	for (i = 0; i < 4; i++)
-		if (fun(test[i]))
-			fprintf(out, "YES\n");
-		else
-			fprintf(out, "NO\n");
-	fclose(out);
-	/************************************/
+	printf("m=%d", m);
+	return 0;
 }
