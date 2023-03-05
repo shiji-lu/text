@@ -1013,20 +1013,119 @@
 //}
 
 
+//
+//#include<stdio.h>
+//int main()
+//{
+//	int i, j, m = 1;
+//	for (i = 1; i < 3; i++)
+//	{
+//		for (j = 3; j > 0; j--)
+//		{
+//			if (i * j > 3)
+//				break;
+//			m *= i * j;
+//		}
+//	}
+//	printf("m=%d", m);
+//	return 0;
+//}
 
-#include<stdio.h>
-int main()
+//
+//#include<stdio.h>
+//int main()
+//{
+//	int a = 123456, b;
+//	while (a)
+//	{
+//		b = a % 10;
+//		a /= 10;
+//		switch (b)
+//		{
+//		default:printf("&d", b++);
+//		case 1:break;
+//		case 2:printf("%d", b++); break;
+//		case 3:printf("%d", b++); 
+//		case 4:printf("%d", b++); 
+//		case 5:printf("%d", b++); 
+//		}
+//	}
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//int* f(int* s)
+//{
+//	s += 1;
+//	s[1] += 6;
+//	*s-- += 7;
+//	return s;
+//}
+//int main()
+//{
+//	int a[] = { 1,2,3,4,5 };
+//	int*p = f(a);
+//	return 0;
+//}
+
+
+
+#include <stdio.h>
+#include <string.h>
+void fun(char* s0, char* s1, char* s2, char* s3)
 {
-	int i, j, m = 1;
-	for (i = 1; i < 3; i++)
+	char* p1 = s0, * p2 = s0 + 1, * p3 = s0 + 2;
+	int len = strlen(s0);
+	int i = 0;
+	while (p1 < s0 + len || p2 < s0 + len || p3 < s0 + len)
 	{
-		for (j = 3; j > 0; j--)
+		if (p1 < s0 + len)
 		{
-			if (i * j > 3)
-				break;
-			m *= i * j;
+			s1[i++] = *p1;
+			p1 += 3;
+		}
+		if (p2 < s0 + len)
+		{
+			s2[i++] = *p2;
+			p2 += 3;
+		}
+		if (p3 < s0 + len)
+		{
+			s3[i++] = *p3;
+			p3 += 3;
 		}
 	}
-	printf("m=%d", m);
-	return 0;
+	s1[i] = '\0';
+	s2[i] = '\0';
+	s3[i] = '\0';
+
+
+}
+void main()
+{
+	void NONO();
+	char  s0[100], s1[40], s2[40], s3[40];
+	printf("ÇëÊäÈëÒ»ÐÐ×Ö·û´®\n");
+	gets(s0);
+	fun(s0, s1, s2, s3);
+	puts(s1);
+	puts(s2);
+	puts(s3);
+	NONO();
+}
+void NONO()
+{
+	FILE* fp = fopen("out.dat", "w");
+	char s0[10][100] = { "1234567890qazwsx","abcdefghij","0987654321plmokn","fsdjfsdlrj564342dsf",
+	"gfdklgjdsfl4754398","zxcvbnmasdfg","asdfghjkl123","qwertyuiop456","qweasdzxc789",
+	"poiuytrewqwsxqaz" };
+	char s1[40], s2[40], s3[40];
+	int i;
+	for (i = 0; i < 10; i++)
+	{
+		fun(s0[i], s1, s2, s3);
+		fprintf(fp, "s1=%s,s2=%s,s3=%s\n", s1, s2, s3);
+	}
+	fclose(fp);
 }
