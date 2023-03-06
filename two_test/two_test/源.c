@@ -1071,61 +1071,90 @@
 
 
 
-#include <stdio.h>
-#include <string.h>
-void fun(char* s0, char* s1, char* s2, char* s3)
-{
-	char* p1 = s0, * p2 = s0 + 1, * p3 = s0 + 2;
-	int len = strlen(s0);
-	int i = 0;
-	while (p1 < s0 + len || p2 < s0 + len || p3 < s0 + len)
-	{
-		if (p1 < s0 + len)
-		{
-			s1[i++] = *p1;
-			p1 += 3;
-		}
-		if (p2 < s0 + len)
-		{
-			s2[i++] = *p2;
-			p2 += 3;
-		}
-		if (p3 < s0 + len)
-		{
-			s3[i++] = *p3;
-			p3 += 3;
-		}
-	}
-	s1[i] = '\0';
-	s2[i] = '\0';
-	s3[i] = '\0';
+//#include <stdio.h>
+//#include <string.h>
+//void fun(char* s0, char* s1, char* s2, char* s3)
+//{
+//	char* p1 = s0, * p2 = s0 + 1, * p3 = s0 + 2;
+//	int len = strlen(s0);
+//	int i = 0;
+//	while (p1 < s0 + len || p2 < s0 + len || p3 < s0 + len)
+//	{
+//		if (p1 < s0 + len)
+//		{
+//			s1[i++] = *p1;
+//			p1 += 3;
+//		}
+//		if (p2 < s0 + len)
+//		{
+//			s2[i++] = *p2;
+//			p2 += 3;
+//		}
+//		if (p3 < s0 + len)
+//		{
+//			s3[i++] = *p3;
+//			p3 += 3;
+//		}
+//	}
+//	s1[i] = '\0';
+//	s2[i] = '\0';
+//	s3[i] = '\0';
+//
+//
+//}
+//void main()
+//{
+//	void NONO();
+//	char  s0[100], s1[40], s2[40], s3[40];
+//	printf("请输入一行字符串\n");
+//	gets(s0);
+//	fun(s0, s1, s2, s3);
+//	puts(s1);
+//	puts(s2);
+//	puts(s3);
+//	NONO();
+//}
+//void NONO()
+//{
+//	FILE* fp = fopen("out.dat", "w");
+//	char s0[10][100] = { "1234567890qazwsx","abcdefghij","0987654321plmokn","fsdjfsdlrj564342dsf",
+//	"gfdklgjdsfl4754398","zxcvbnmasdfg","asdfghjkl123","qwertyuiop456","qweasdzxc789",
+//	"poiuytrewqwsxqaz" };
+//	char s1[40], s2[40], s3[40];
+//	int i;
+//	for (i = 0; i < 10; i++)
+//	{
+//		fun(s0[i], s1, s2, s3);
+//		fprintf(fp, "s1=%s,s2=%s,s3=%s\n", s1, s2, s3);
+//	}
+//	fclose(fp);
+//}
 
-
+#include  <stdio.h>
+int fun(int* c, int d) {
+    int s0, s1, i;
+    s0 = 0;
+    s1 = 0;
+    /********************found***********************/
+    for (i = 0; i < d; i++)
+    {
+        if ((i % 2 == 0) && (c[i] % 2 == 0))
+            s0 += c[i];
+        /**********************found***********************/
+        if ((i % 2 == 1) && (c[i] % 2 == 1))
+            s1 += c[i];
+    }
+    /**********************found***********************/
+    return s0 - s1;
 }
-void main()
+main()
 {
-	void NONO();
-	char  s0[100], s1[40], s2[40], s3[40];
-	printf("请输入一行字符串\n");
-	gets(s0);
-	fun(s0, s1, s2, s3);
-	puts(s1);
-	puts(s2);
-	puts(s3);
-	NONO();
-}
-void NONO()
-{
-	FILE* fp = fopen("out.dat", "w");
-	char s0[10][100] = { "1234567890qazwsx","abcdefghij","0987654321plmokn","fsdjfsdlrj564342dsf",
-	"gfdklgjdsfl4754398","zxcvbnmasdfg","asdfghjkl123","qwertyuiop456","qweasdzxc789",
-	"poiuytrewqwsxqaz" };
-	char s1[40], s2[40], s3[40];
-	int i;
-	for (i = 0; i < 10; i++)
-	{
-		fun(s0[i], s1, s2, s3);
-		fprintf(fp, "s1=%s,s2=%s,s3=%s\n", s1, s2, s3);
-	}
-	fclose(fp);
+    int i, c[100], d;
+    printf("请输入整数序列的长度：");
+    scanf("%d", &d);
+    printf("请输入%d个整数：\n", d);
+    for (i = 0; i < d; i++)
+        scanf("%d", &(c[i]));
+    i = fun(c, d);
+    printf("%d", i);
 }
